@@ -1,3 +1,5 @@
+"use strict";
+
 const dotenv = require('dotenv').config(); 
 const express = require('express');
 const app = express();
@@ -19,7 +21,10 @@ const pool = new Pool({
   port: process.env.PORT,
 });
 
-const getUsers = (req, res) => {
+// DB REQUESTS //////////////////////////////////////////////////////////////
+
+//  get request example, json response
+const getStations = (req, res) => {
     pool.query('SELECT * FROM nyc_subway_stations ORDER BY name', (error, results) => {
       if(error) throw error;
       res.header("Access-Control-Allow-Origin", "*");
@@ -28,6 +33,8 @@ const getUsers = (req, res) => {
     })
 };
 
+
+// get request example, GeoJSON response 
 const getGeoJsonFromServer = (req, res) => {
     pool.query(
       
@@ -45,13 +52,12 @@ const getGeoJsonFromServer = (req, res) => {
     })
 };
 
-// ROUTES/////////////////////////////////////////////////////////
 
-// sends local json stored in data folder
+// ROUTES/////////////////////////////////////////////////////////
 
 
 // database request test
-app.get('/all-users', getUsers);
+app.get('/all-users', getStations);
 
 // geojson request from database
 app.get('/geojson-from-database', getGeoJsonFromServer );

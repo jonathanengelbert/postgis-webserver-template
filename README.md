@@ -51,8 +51,6 @@ This repository includes:
 * Starter queries for most common operations, focused on returning ready to
   parse GeoJSON objects
 
-* Modularity and high configurability for all the aforementioned elements within the code and/or UI
-
 
 ### Motivation
 
