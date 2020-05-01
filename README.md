@@ -2,7 +2,7 @@
 
 Backend template for web GIS applications
 
-##Table of Contents
+## Table of Contents
 
 * [Installation](#installation)
 * [What is the project for?](#what-is-the-project-for)
