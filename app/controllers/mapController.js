@@ -7,7 +7,7 @@ exports.geojsonGetAll = (req, res) => {
         // query
         queries.mapQueries.getAllStations,
         // arguments
-        [name],
+        // [name],
         (error, results) => {
             if (error) {
                 console.log('THERE WAS A PROBLEM:\n\n');
