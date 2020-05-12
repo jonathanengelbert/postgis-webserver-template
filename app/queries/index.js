@@ -1,6 +1,10 @@
-const mapQueries = require('./mapQueries');
+const stationQueries = require('./stationQueries');
+const homicideQueries = require('./homicideQueries');
+const neighborhoodQueries = require('./neighborhoodQueries');
 
 module.exports = {
-  mapQueries: mapQueries
+  stationQueries: stationQueries,
+  homicideQueries: homicideQueries,
+  neighborhoodQueries: neighborhoodQueries
 };
 
