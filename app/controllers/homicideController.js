@@ -1,11 +1,11 @@
 const pool = require('../db.js');
-const queries = require('../queries');
+const { homicideQueries } = require('../queries');
 
 //  get request example, json response
-exports.geojsonGetAll = (req, res) => {
+exports.allHomicides = (req, res) => {
     pool.query(
         // query
-        queries.mapQueries.getAllStations,
+        homicideQueries.getAllHomicides,
         // arguments
         // [name],
         (error, results) => {
