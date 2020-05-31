@@ -25,6 +25,7 @@ exports.getAllStations = `SELECT row_to_json(fc) FROM (
                       FROM public.nyc_subway_stations As lg
 		              -- Any extra filtering of target database here, optional
  		              --  WHERE name LIKE '%' || $1 || '%'  
+                     ORDER BY long_name
 	     ) As f
 ) As fc`;
 

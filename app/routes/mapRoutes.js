@@ -7,14 +7,18 @@ const router = express.Router();
 const { 
     stationController, 
     homicideController,
-    neighborhoodController
+    neighborhoodController,
+    stationCommentsController
 } = require('../controllers');
 
 //console.log(homicideController.allHomicides());
 
-// get all stations
+// geojson map layers routes 
 router.get('/geojson-all-stations', stationController.geojsonGetAll);
 router.get('/geojson-all-homicides', homicideController.allHomicides);
 router.get('/geojson-all-neighborhoods', neighborhoodController.getAllNeighborhoods);
+// tabular data
+router.get('/all-station-comments', stationCommentsController.getAllComments);
+router.get('/get-one-comment', stationCommentsController.getOneComment);
 
 module.exports = router;
