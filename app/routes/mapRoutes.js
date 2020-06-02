@@ -19,6 +19,9 @@ router.get('/geojson-all-homicides', homicideController.allHomicides);
 router.get('/geojson-all-neighborhoods', neighborhoodController.getAllNeighborhoods);
 // tabular data
 router.get('/all-station-comments', stationCommentsController.getAllComments);
-router.get('/get-one-comment', stationCommentsController.getOneComment);
+router.get('/get-comments', stationCommentsController.getOneComment);
+// post
+router.post('/post-comment', stationCommentsController.postComment);
+
 
 module.exports = router;
