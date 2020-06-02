@@ -14,9 +14,9 @@ const mapRouter = require('./app/routes/mapRoutes');
 
 // middleware
 app.use(cors());
-app.use(mapRouter);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(mapRouter);
 
 
 app.listen(port, () => {
