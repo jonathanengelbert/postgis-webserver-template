@@ -4,9 +4,9 @@ const neighborhoodQueries = require('./neighborhoodQueries');
 const stationCommentsQueries = require('./stationCommentsQueries');
 
 module.exports = {
-  stationQueries: stationQueries,
-  homicideQueries: homicideQueries,
-  neighborhoodQueries: neighborhoodQueries,
-  stationCommentsQueries, stationCommentsQueries
+    stationQueries: stationQueries,
+    homicideQueries: homicideQueries,
+    neighborhoodQueries: neighborhoodQueries,
+    stationCommentsQueries: stationCommentsQueries
 };
 
