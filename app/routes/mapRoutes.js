@@ -22,6 +22,9 @@ router.get('/all-station-comments', stationCommentsController.getAllComments);
 router.get('/get-comments', stationCommentsController.getOneComment);
 // post
 router.post('/post-comment', stationCommentsController.postComment);
+// update
+router.put('/update-comment', stationCommentsController.updateComment);
+
 
 
 module.exports = router;

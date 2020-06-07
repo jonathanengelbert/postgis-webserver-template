@@ -9,3 +9,7 @@ exports.getOneComment = `SELECT * FROM public.station_comments
 exports.postComment = `INSERT INTO station_comments (station_id, comment, author) 
   VALUES ($1, $2, $3)`;
 
+// updates a record by id
+exports.updateComment = `UPDATE station_comments
+                          SET comment = $1
+                          WHERE id = $2`;
