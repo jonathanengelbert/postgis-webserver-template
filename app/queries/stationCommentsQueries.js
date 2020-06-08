@@ -13,3 +13,6 @@ exports.postComment = `INSERT INTO station_comments (station_id, comment, author
 exports.updateComment = `UPDATE station_comments
                           SET comment = $1
                           WHERE id = $2`;
+
+exports.deleteOneComment = `DELETE FROM station_comments
+                            WHERE id = $1`;
