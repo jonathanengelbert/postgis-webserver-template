@@ -6,8 +6,6 @@ exports.getAllComments = (req, res) => {
     pool.query(
         // query
         queries.stationCommentsQueries.getAllComments,
-        // arguments
-        // [name],
         (error, results) => {
             if (error) {
                 res.status(400);
@@ -49,16 +47,13 @@ exports.getOneComment = (req, res) => {
 
 // post a comment
 exports.postComment = (req, res) => {
-
     const {stationId = null, comment = null, author = null} = req.body;
-
     if (stationId && comment && author) {
         pool.query(
             // query
             queries.stationCommentsQueries.postComment,
             // arguments
             [stationId, comment, author],
-
             (error, results) => {
                 if (error && error.code === '23505') {
                     res.status(400);
@@ -86,10 +81,9 @@ exports.postComment = (req, res) => {
     }
 };
 
-// get comments by station ID
+// update a comment from comment ID
 exports.updateComment = (req, res) => {
     const {comment, commentId} = req.body;
-
     if (comment.length < 2) {
         res.send({
            message: 'Input is too short',
@@ -97,7 +91,6 @@ exports.updateComment = (req, res) => {
         });
         return;
     }
-
     if (commentId) {
         pool.query(
             // query
@@ -111,10 +104,44 @@ exports.updateComment = (req, res) => {
                         message: 'An error has occured',
                         statusCode: '1'
                     })
+                    return;
                 }
                 res.header("Access-Control-Allow-Origin", "*");
                 res.status(200).json({
                     message: 'Comment Updated',
+                    statusCode: '0'
+                });
+            })
+    } else {
+        res.status(400);
+        res.send({
+            message: 'No comment id was provided!',
+            statusCode: '1'
+        });
+    }
+};
+
+// delete comment by comment ID
+exports.deleteOneComment = (req, res) => {
+    const {commentId} = req.body;
+    if (commentId) {
+        pool.query(
+            // query
+            queries.stationCommentsQueries.deleteOneComment,
+            // arguments
+            [ commentId],
+            (error, results) => {
+                if (error) {
+                    res.status(400);
+                    res.send({
+                        message: 'An error has occured',
+                        statusCode: '1'
+                    })
+                        return;
+                }
+                res.header("Access-Control-Allow-Origin", "*");
+                res.status(200).json({
+                    message: 'Comment Deleted',
                     statusCode: '0'
                 });
             })

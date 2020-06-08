@@ -24,7 +24,7 @@ router.get('/get-comments', stationCommentsController.getOneComment);
 router.post('/post-comment', stationCommentsController.postComment);
 // update
 router.put('/update-comment', stationCommentsController.updateComment);
-
-
+// delete
+router.delete('/delete-comment', stationCommentsController.deleteOneComment);
 
 module.exports = router;
