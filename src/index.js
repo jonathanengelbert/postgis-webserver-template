@@ -10,7 +10,7 @@ const fs = require('fs')
 const port = process.env.APP_PORT;
 
 // routers
-const mapRouter = require('./app/routes/mapRoutes');
+const mapRouter = require('./routes/mapRoutes');
 
 // middleware
 app.use(cors());
