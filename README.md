@@ -4,7 +4,6 @@ Backend template for web GIS applications
 
 ## Table of Contents
 
-* [Live Demo](#live-demo)
 * [Installation](#installation)
 * [What is the project for?](#what-is-the-project-for)
 * [Motivation](#motivation)
@@ -12,12 +11,6 @@ Backend template for web GIS applications
 * [Contributing](#contributing)
 * [Authors](#authors)
 * [License](#license)
-
-### Live Demo
-
-You can see this code in action with sample data from the NYC Open Data Portal and another [mapping framework I developed](https://github.com/jonathanengelbert/mapping-app-prototype) which stands up a React/Typescrypt/Mapbox frontend at:
-
-https://crud-mapbox-example.jonathanengelbert.com/
 
 ### Installation
 
